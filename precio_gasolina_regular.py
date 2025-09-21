@@ -22,7 +22,6 @@ Xm = pd.DataFrame(data, columns=['Entidad', 'Mes', 'Anio'])
 ym = data['Valor']
 
 Xm_train, Xm_test, ym_train, ym_test = train_test_split(Xm, ym, test_size=0.30, random_state=0)
-ym_train
 
 LRm = LinearRegression()
 LRm.fit(Xm_train,ym_train)
@@ -39,7 +38,5 @@ pred = b0m + bm[0]*entity + bm[1]*mes + bm[2]*anio
 # Botones
 boton_calcular = st.button("Calcular")
 
-st.write('El precio mensual de la gasolina regular es de:', pred)
-
 if boton_calcular:
-    st.write(f'La suma es: {pred}')
+    st.write(f'El precio mensual de la gasolina regular es de: {pred}')
